@@ -1,1 +1,26 @@
-<h1>Crud#index</h1>
+<h1>LISTA DE USUARIOS</h1>
+<table class="tabla">
+  <form method= "POST" action = "delete">
+  <tr>
+    <th> </th>
+    <th>Nombre</th>
+    <th>Dirección</th>
+    <th>Correo electrónico</th>
+    <th>Teléfono</th>
+    <th>Edad</th>
+    <th> </th>
+  </tr>
+  <% @userAll.each do |u| %>
+      <tr>
+        <td><input type='checkbox' name="users[]" value="<%= u.id %>" id="<%= u.id %>"/><label for="<%= u.id %>"></label></td>
+        <td class="bold"><%= link_to u.name, action: 'read', id: u %></td>
+        <td><%= u.address %></td>
+        <td><%= u.email%></td>
+        <td><%= u.phone%></td>
+        <td><%= u.age%></td>
+        <td class="bold"><%= link_to "editar", action: 'update', id: u %></td>
+      </tr>
+    <% end %>
+</table>
+<input type="submit" name="Eliminar" value="Eliminar" class="boton">
+</form>

@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   get 'crud/index'
 
   get 'crud/create'
+  post 'crud/create'  => "crud#create"
 
   get 'crud/read'
 
   get 'crud/update'
 
-  get 'crud/delete'
+  post 'crud/delete' => "crud#delete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

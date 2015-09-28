@@ -1,2 +1,25 @@
-<h1>Crud#create</h1>
-<p>Find me in app/views/crud/create.html.erb</p>
+<% content_for :title do %>Nuevo usuario<% end %>
+
+  <section >
+    <article>
+      <p>CREAR USUARIO</p>
+    </article>
+    <form method= "POST">
+      <p>Nombre</p>
+            <input type="text" value = "<%=@user.name%>" required  name ="user[name]">
+            <% unless @user.errors[:name].empty? %><p style="color:red"><%= @user.errors[:name].first %></p><% end %>
+        <p>Dirección</p>
+              <input type="text" value = "<%=@user.address%>" required  name = "user[address]">
+              <% unless @user.errors[:address].empty? %><p style="color:red"><%= @user.errors[:address].first %></p><% end %>
+        <p>Correo electrónico</p>
+              <input type="text" value = "<%=@user.email%>" required  name = "user[email]">
+              <% unless @user.errors[:email].empty? %><p style="color:red"><%= @user.errors[:email].first %></p><% end %>
+        <p>Teléfono</p>
+              <input type="text" value = "<%=@user.phone%>" required  name = "user[phone]">
+              <% unless @user.errors[:phone].empty? %><p style="color:red"><%= @user.errors[:phone].first %></p><% end %>
+        <p>Edad</p>
+              <input type="text" value = "<%=@user.age%>" required  name = "user[age]">
+              <% unless @user.errors[:age].empty? %><p style="color:red"><%= @user.errors[:age].first %></p><% end %>
+        <input type="submit" name="submit" Value="Guardar">
+        <%= link_to "Cancelar", {:controller => :crud, :action => :index}%>
+      </form>
