@@ -1,0 +1,22 @@
+<h1>CrudUser#update</h1>
+<% content_for :title do %>Editar usuario<% end %>
+  <section >
+    <article>
+      <p>Editar usuario <b> <%= @user.nombre%></b></p>
+    </article>
+    <form method= "POST">
+      <p>Nombre</p>
+            <input type="text" value = "<%=@user.nombre%>" required  name ="user[nombre]">
+            <% unless @user.errors[:nombre].empty? %><p style="color:red"><%= @user.errors[:nombre].first %></p><% end %>
+        <p>Dirección</p>
+              <input type="text" value = "<%=@user.direccion%>" required  name = "user[direccion]">
+              <% unless @user.errors[:direccion].empty? %><p style="color:red"><%= @user.errors[:address].first %></p><% end %>
+        <p>Correo electrónico</p>
+              <input type="text" value = "<%=@user.correo%>" required  name = "user[correo]">
+              <% unless @user.errors[:correo].empty? %><p style="color:red"><%= @user.errors[:correo].first %></p><% end %>
+        <p>contraseña</p>
+            <input type="password" name = "user[contraseña]">
+            <% unless @user.errors[:correo].empty? %><p style="color:red"><%= @user.errors[:contraseña].first %></p><% end %>
+        <input type="submit" name="submit" Value="Guardar">
+        <%= link_to "Cancelar", {:controller => :crud_user, :action => :index}%>
+      </form>

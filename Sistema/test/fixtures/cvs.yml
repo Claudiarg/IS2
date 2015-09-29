@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_nacimiento: 2015-09-28
+  rfc: MyString
+  area: 1
+  formacionUltimoGrado: MyString
+
+two:
+  fecha_nacimiento: 2015-09-28
+  rfc: MyString
+  area: 1
+  formacionUltimoGrado: MyString

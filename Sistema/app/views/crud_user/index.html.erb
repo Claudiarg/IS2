@@ -1,0 +1,25 @@
+<h1>CrudUser#index</h1>
+<form method= "POST" action = "delete">
+<table class="tabla">
+
+  <tr>
+    <th> </th>
+    <th>Nombre</th>
+    <th>Dirección</th>
+    <th>Correo electrónico</th>
+    <th> </th>
+  </tr>
+
+  <% @users.each do |u| %>
+      <tr>
+        <td><input type='checkbox' name="users[]" value="<%= u.id %>" id="<%= u.id %>"/><label for="<%= u.id %>"></label></td>
+        <td class="bold"><%= link_to u.nombre, action: 'read', id: u %></td>
+        <td><%= u.direccion %></td>
+        <td><%= u.correo%></td>
+        <td class="bold"><%= link_to "editar", action: 'update', id: u %></td>
+      </tr>
+    <% end %>
+</table>
+  <input type="submit" name="Eliminar" value="Eliminar" class="boton">
+  <%= link_to "Nuevo usuario", action: 'create'%>
+</form>
