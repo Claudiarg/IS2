@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  get 'crud_user/index'
-
-  get 'crud_user/create'
-  post'crud_user/create' => "crud_user#create"
-
-  post 'crud_user/delete' => "crud_user#delete"
-
-  get 'crud_user/update'
-  post 'crud_user/update' => "crud_user#update"
-
-  get 'crud_user/read'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
